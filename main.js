@@ -311,6 +311,7 @@ var BalanceComponent = /** @class */ (function () {
     };
     BalanceComponent.prototype.ngOnInit = function () {
         this.getCurrentUser();
+        //this.fechaInicio = new FormControl(this.data.selectedConcepto.date.toDate());
     };
     BalanceComponent.prototype.ngAfterViewInit = function () {
         this.dataSource.paginator = this.paginator;
