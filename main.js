@@ -313,12 +313,12 @@ var BalanceComponent = /** @class */ (function () {
         this.getCurrentUser();
     };
     BalanceComponent.prototype.ngAfterViewInit = function () {
-        //this.dataSource.paginator = this.paginator;
-        //this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
     };
     BalanceComponent.prototype.getConceptosByUser = function (userUid) {
         var _this = this;
-        this.conceptoService.getConceptosByUser(userUid).subscribe(function (res) {
+        this.conceptoService.getConceptosByUserYearMonth(userUid).subscribe(function (res) {
             _this.dataSource.data = res;
         });
     };
@@ -1778,6 +1778,17 @@ var ConceptosService = /** @class */ (function () {
             _this.updateConcepto(concepto);
         });
         ;
+    };
+    ConceptosService.prototype.getConceptosByUserYearMonth = function (userUid) {
+        this.conceptosCollection = this.afs.collection('conceptos', function (ref) { return ref.where('userUid', '==', userUid).orderBy('date', 'desc').startAt("2023-07-01").endAt("2023-07-23 23:59:59"); });
+        return this.conceptos = this.conceptosCollection.snapshotChanges()
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (changes) {
+            return changes.map(function (action) {
+                var data = action.payload.doc.data();
+                data.id = action.payload.doc.id;
+                return data;
+            });
+        }));
     };
     ConceptosService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
