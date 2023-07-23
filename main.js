@@ -270,7 +270,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"header-app\">\n    <h1>Mantenimiento de Conceptos</h1>\n  </div>\n  <div class=\"example-header\" fxLayout=\"row\">\n    <div class=\"oneline\">\n      <button mat-raised-button color=\"primary\" (click)=\"openDialog()\">\n        <mat-icon>note_add</mat-icon> Nuevo\n      </button>\n    </div>\n    <div class=\"oneline-right\">\n      <mat-form-field >\n        <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filtro\">\n      </mat-form-field>\n    </div>\n  </div>\n  <div>\n    <table mat-table [dataSource]=\"dataSource\" matSort class=\"mat-elevation-z8\">\n      <ng-container matColumnDef=\"type\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.type}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"category\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoría </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.category}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"description\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.description}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"mount\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Monto </th>\n        <td mat-cell *matCellDef=\"let element\" class=\"mount-cell\"> {{element.mount | number:'.2'}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"date\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.date.toDate() | date: 'dd/MM/yyyy'}} </td>\n      </ng-container>\n      \n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n    </table>\n\n    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"header-app\">\n    <h1>Balance de Ingresos y Egresos</h1>\n  </div>\n  <form #formFiltro=\"ngForm\" (ngSubmit)=\"getConceptosByUserDates(formFiltro)\">\n  <div class=\"example-header\" fxLayout=\"row\">\n    <div class=\"oneline\">\n      <mat-form-field>\n        <input matInput [matDatepicker]=\"pick\"  placeholder=\"Fecha Inicio\" [formControl]=\"fechaInicio\">\n        <mat-datepicker-toggle matSuffix [for]=\"pick\"></mat-datepicker-toggle>\n        <mat-datepicker #pick></mat-datepicker>\n      </mat-form-field>\n    </div>\n    <div class=\"oneline\">\n      <mat-form-field>\n        <input matInput [matDatepicker]=\"pick\"  placeholder=\"Fecha Fin\" [formControl]=\"fechaFin\">\n        <mat-datepicker-toggle matSuffix [for]=\"pick\"></mat-datepicker-toggle>\n        <mat-datepicker #pick></mat-datepicker>\n      </mat-form-field>\n    </div>\n    <div class=\"oneline\">\n      <button mat-button cdkFocusInitial (click)=\"(this.formFiltro.onSubmit())\">Filtrar</button>\n    </div>\n  </div>\n  </form>\n  <div>\n    <table mat-table [dataSource]=\"dataSource\" matSort class=\"mat-elevation-z8\">\n      <ng-container matColumnDef=\"type\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.type}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"category\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoría </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.category}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"description\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.description}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"mount\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Monto </th>\n        <td mat-cell *matCellDef=\"let element\" class=\"mount-cell\"> {{element.mount | number:'.2'}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"date\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.date.toDate() | date: 'dd/MM/yyyy'}} </td>\n      </ng-container>\n\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n    </table>\n\n    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -316,9 +316,11 @@ var BalanceComponent = /** @class */ (function () {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
     };
-    BalanceComponent.prototype.getConceptosByUser = function (userUid) {
+    BalanceComponent.prototype.getConceptosByUserDates = function (filtroForm) {
         var _this = this;
-        this.conceptoService.getConceptosByUserYearMonth(userUid).subscribe(function (res) {
+        this.balance.fechaInicio = filtroForm.value.fechaInicio;
+        this.balance.fechaFin = filtroForm.value.fechaFin;
+        this.conceptoService.getConceptosByUserDates(this.userUid, this.balance).subscribe(function (res) {
             _this.dataSource.data = res;
         });
     };
@@ -330,7 +332,6 @@ var BalanceComponent = /** @class */ (function () {
                 _this.authService.isUserAdmin(_this.userUid).subscribe(function (userRole) {
                     _this.isAdmin = Object.assign({}, userRole.roles).hasOwnProperty('admin');
                 });
-                _this.getConceptosByUser(_this.userUid);
             }
         });
     };
@@ -1779,8 +1780,8 @@ var ConceptosService = /** @class */ (function () {
         });
         ;
     };
-    ConceptosService.prototype.getConceptosByUserYearMonth = function (userUid) {
-        this.conceptosCollection = this.afs.collection('conceptos', function (ref) { return ref.where('userUid', '==', userUid).orderBy('date', 'desc').startAt("01/07/2023").endAt("23/07/2023"); });
+    ConceptosService.prototype.getConceptosByUserDates = function (userUid, balance) {
+        this.conceptosCollection = this.afs.collection('conceptos', function (ref) { return ref.where('userUid', '==', userUid).orderBy('date', 'desc').startAt(balance.fechaInicio).endAt(balance.fechaFin); });
         return this.conceptos = this.conceptosCollection.snapshotChanges()
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (changes) {
             return changes.map(function (action) {
