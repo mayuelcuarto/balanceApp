@@ -1780,7 +1780,7 @@ var ConceptosService = /** @class */ (function () {
         ;
     };
     ConceptosService.prototype.getConceptosByUserYearMonth = function (userUid) {
-        this.conceptosCollection = this.afs.collection('conceptos', function (ref) { return ref.where('userUid', '==', userUid).orderBy('date', 'desc').startAt("2023-07-01").endAt("2023-07-23 23:59:59"); });
+        this.conceptosCollection = this.afs.collection('conceptos', function (ref) { return ref.where('userUid', '==', userUid).orderBy('date', 'desc').startAt("01/07/2023").endAt("23/07/2023"); });
         return this.conceptos = this.conceptosCollection.snapshotChanges()
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (changes) {
             return changes.map(function (action) {
