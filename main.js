@@ -65,7 +65,7 @@ var routes = [
     { path: 'user/profile', component: _components_users_profile_profile_component__WEBPACK_IMPORTED_MODULE_7__["ProfileComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_11__["AuthGuard"]] },
     { path: 'conceptos', component: _components_conceptos_conceptos_component__WEBPACK_IMPORTED_MODULE_8__["ConceptosComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_11__["AuthGuard"]] },
     { path: 'categorias', component: _components_categorias_categorias_component__WEBPACK_IMPORTED_MODULE_9__["CategoriasComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_11__["AuthGuard"]] },
-    { path: 'balance', component: _components_balance_balance_component__WEBPACK_IMPORTED_MODULE_10__["BalanceComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_11__["AuthGuard"]] }
+    { path: 'balance', component: _components_balance_balance_component__WEBPACK_IMPORTED_MODULE_10__["BalanceComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -259,7 +259,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "h1{\r\n\ttext-align: center;\r\n}\r\n\r\ntable{\r\n\twidth: 100%;\r\n}\r\n\r\n.mat-icon{\r\n\tcursor: pointer;\r\n}\r\n\r\n.mount-cell{\r\n\ttext-align: right; \r\n\tpadding-right: 1%;\r\n}\r\n\r\n.oneline{\r\n width: 33%;\r\n display: inline-block;\r\n}\r\n\r\n.oneline-center{\r\n width: 33%;\r\n display: inline-block;\r\n text-align: center;\r\n}\r\n\r\n.oneline-right{\r\n width: 33%;\r\n display: inline-block;\r\n text-align: right;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9iYWxhbmNlL2JhbGFuY2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLGtCQUFrQjtBQUNuQjs7QUFFQTtDQUNDLFdBQVc7QUFDWjs7QUFFQTtDQUNDLGVBQWU7QUFDaEI7O0FBRUE7Q0FDQyxpQkFBaUI7Q0FDakIsaUJBQWlCO0FBQ2xCOztBQUVBO0NBQ0MsVUFBVTtDQUNWLHFCQUFxQjtBQUN0Qjs7QUFFQTtDQUNDLFVBQVU7Q0FDVixxQkFBcUI7Q0FDckIsa0JBQWtCO0FBQ25COztBQUVBO0NBQ0MsVUFBVTtDQUNWLHFCQUFxQjtDQUNyQixpQkFBaUI7QUFDbEIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2JhbGFuY2UvYmFsYW5jZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaDF7XHJcblx0dGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG50YWJsZXtcclxuXHR3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLm1hdC1pY29ue1xyXG5cdGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLm1vdW50LWNlbGx7XHJcblx0dGV4dC1hbGlnbjogcmlnaHQ7IFxyXG5cdHBhZGRpbmctcmlnaHQ6IDElO1xyXG59XHJcblxyXG4ub25lbGluZXtcclxuIHdpZHRoOiAzMyU7XHJcbiBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbn1cclxuXHJcbi5vbmVsaW5lLWNlbnRlcntcclxuIHdpZHRoOiAzMyU7XHJcbiBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5vbmVsaW5lLXJpZ2h0e1xyXG4gd2lkdGg6IDMzJTtcclxuIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuIHRleHQtYWxpZ246IHJpZ2h0O1xyXG59XHJcbiJdfQ== */"
+module.exports = "h1{\r\n\ttext-align: center;\r\n}\r\n\r\ntable{\r\n\twidth: 100%;\r\n}\r\n\r\n.mat-icon{\r\n\tcursor: pointer;\r\n}\r\n\r\n.mount-cell{\r\n\ttext-align: right; \r\n\tpadding-right: 1%;\r\n}\r\n\r\n.oneline{\r\n width: 20%;\r\n display: inline-block;\r\n}\r\n\r\n.oneline-center{\r\n width: 15%;\r\n display: inline-block;\r\n text-align: center;\r\n}\r\n\r\n.oneline-right{\r\n width: 5%;\r\n display: inline-block;\r\n text-align: right;\r\n}\r\n\r\n@media only screen and (max-width: 600px) {\r\n    .oneline{\r\n     width: 100%;\r\n     display: inline-block;\r\n     margin-left: 10px;\r\n    }\r\n\r\n    .oneline-center{\r\n     width: 100%;\r\n     display: inline-block;\r\n     text-align: left;\r\n     margin-left: 10px;\r\n    }\r\n\r\n    .oneline-right{\r\n     width: 100%;\r\n     display: inline-block;\r\n     text-align: left;\r\n     margin-left: 10px;\r\n    }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9iYWxhbmNlL2JhbGFuY2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLGtCQUFrQjtBQUNuQjs7QUFFQTtDQUNDLFdBQVc7QUFDWjs7QUFFQTtDQUNDLGVBQWU7QUFDaEI7O0FBRUE7Q0FDQyxpQkFBaUI7Q0FDakIsaUJBQWlCO0FBQ2xCOztBQUVBO0NBQ0MsVUFBVTtDQUNWLHFCQUFxQjtBQUN0Qjs7QUFFQTtDQUNDLFVBQVU7Q0FDVixxQkFBcUI7Q0FDckIsa0JBQWtCO0FBQ25COztBQUVBO0NBQ0MsU0FBUztDQUNULHFCQUFxQjtDQUNyQixpQkFBaUI7QUFDbEI7O0FBRUE7SUFDSTtLQUNDLFdBQVc7S0FDWCxxQkFBcUI7S0FDckIsaUJBQWlCO0lBQ2xCOztJQUVBO0tBQ0MsV0FBVztLQUNYLHFCQUFxQjtLQUNyQixnQkFBZ0I7S0FDaEIsaUJBQWlCO0lBQ2xCOztJQUVBO0tBQ0MsV0FBVztLQUNYLHFCQUFxQjtLQUNyQixnQkFBZ0I7S0FDaEIsaUJBQWlCO0lBQ2xCO0FBQ0oiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2JhbGFuY2UvYmFsYW5jZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaDF7XHJcblx0dGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG50YWJsZXtcclxuXHR3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLm1hdC1pY29ue1xyXG5cdGN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLm1vdW50LWNlbGx7XHJcblx0dGV4dC1hbGlnbjogcmlnaHQ7IFxyXG5cdHBhZGRpbmctcmlnaHQ6IDElO1xyXG59XHJcblxyXG4ub25lbGluZXtcclxuIHdpZHRoOiAyMCU7XHJcbiBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbn1cclxuXHJcbi5vbmVsaW5lLWNlbnRlcntcclxuIHdpZHRoOiAxNSU7XHJcbiBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5vbmVsaW5lLXJpZ2h0e1xyXG4gd2lkdGg6IDUlO1xyXG4gZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gdGV4dC1hbGlnbjogcmlnaHQ7XHJcbn1cclxuXHJcbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1heC13aWR0aDogNjAwcHgpIHtcclxuICAgIC5vbmVsaW5le1xyXG4gICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICBtYXJnaW4tbGVmdDogMTBweDtcclxuICAgIH1cclxuXHJcbiAgICAub25lbGluZS1jZW50ZXJ7XHJcbiAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgICB9XHJcblxyXG4gICAgLm9uZWxpbmUtcmlnaHR7XHJcbiAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbiAgICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgICB9XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -270,7 +270,7 @@ module.exports = "h1{\r\n\ttext-align: center;\r\n}\r\n\r\ntable{\r\n\twidth: 10
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"header-app\">\n    <h1>Balance de Ingresos y Egresos</h1>\n  </div>\n  <form #formFiltro=\"ngForm\" (ngSubmit)=\"getConceptosByUserDates(formFiltro)\">\n  <div class=\"example-header\" fxLayout=\"row\" mat-dialog-content>\n    <div class=\"oneline\">\n      <mat-form-field>\n        <input matInput [matDatepicker]=\"fechaInicio\" placeholder=\"Fecha Inicio\" name=\"fechaInicio\">\n        <mat-datepicker-toggle matSuffix [for]=\"fechaInicio\"></mat-datepicker-toggle>\n        <mat-datepicker #fechaInicio></mat-datepicker>\n      </mat-form-field>\n    </div>\n    <div class=\"oneline-center\">\n      <mat-form-field>\n        <input matInput [matDatepicker]=\"fechaFin\" placeholder=\"Fecha Fin\" name=\"fechaFin\">\n        <mat-datepicker-toggle matSuffix [for]=\"fechaFin\"></mat-datepicker-toggle>\n        <mat-datepicker #fechaFin></mat-datepicker>\n      </mat-form-field>\n    </div>\n    <div class=\"oneline-right\">\n      <button mat-button cdkFocusInitial (click)=\"(this.formFiltro.onSubmit())\">Filtrar</button>\n    </div>\n  </div>\n  </form>\n  <div>\n    <table mat-table [dataSource]=\"dataSource\" matSort class=\"mat-elevation-z8\">\n      <ng-container matColumnDef=\"type\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.type}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"category\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoría </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.category}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"description\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.description}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"mount\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Monto </th>\n        <td mat-cell *matCellDef=\"let element\" class=\"mount-cell\"> {{element.mount | number:'.2'}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"date\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.date.toDate() | date: 'dd/MM/yyyy'}} </td>\n      </ng-container>\n\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n    </table>\n\n    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"header-app\">\n    <h1>Balance de Ingresos y Egresos</h1>\n  </div>\n  <form #formFiltro=\"ngForm\" (ngSubmit)=\"getConceptosByUserDates(formFiltro)\">\n  <div class=\"example-header\" fxLayout=\"row\" mat-dialog-content>\n    <div class=\"oneline\">\n      <mat-form-field>\n        <input matInput [matDatepicker]=\"date1\" placeholder=\"Fecha Inicio\" name=\"fechaInicio\" [formControl]=\"fechaInicio\">\n        <mat-datepicker-toggle matSuffix [for]=\"date1\"></mat-datepicker-toggle>\n        <mat-datepicker #date1></mat-datepicker>\n      </mat-form-field>\n    </div>\n    <div class=\"oneline-center\">\n      <mat-form-field>\n        <input matInput [matDatepicker]=\"date2\" placeholder=\"Fecha Fin\" name=\"fechaFin\" [formControl]=\"fechaFin\">\n        <mat-datepicker-toggle matSuffix [for]=\"date2\"></mat-datepicker-toggle>\n        <mat-datepicker #date2></mat-datepicker>\n      </mat-form-field>\n    </div>\n    <div class=\"oneline-center\">\n      <button mat-raised-button color=\"primary\" cdkFocusInitial (click)=\"(this.formFiltro.onSubmit())\">Filtrar</button>\n    </div>\n  </div>\n  </form>\n  <div>\n    <table mat-table [dataSource]=\"dataSource\" matSort class=\"mat-elevation-z8\">\n      <ng-container matColumnDef=\"type\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.type}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"category\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoría </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.category}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"description\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.description}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"mount\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Monto </th>\n        <td mat-cell *matCellDef=\"let element\" class=\"mount-cell\"> {{element.mount | number:'.2'}} </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"date\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.date.toDate() | date: 'dd/MM/yyyy'}} </td>\n      </ng-container>\n\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n    </table>\n\n    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -289,6 +289,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _services_conceptos_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/conceptos.service */ "./src/app/services/conceptos.service.ts");
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+
 
 
 
@@ -303,6 +305,8 @@ var BalanceComponent = /** @class */ (function () {
         this.userUid = null;
         this.displayedColumns = ['type', 'category', 'description', 'mount', 'date'];
         this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"]();
+        this.fechaInicio = null;
+        this.fechaFin = null;
     }
     BalanceComponent.prototype.applyFilter = function (filterValue) {
         filterValue = filterValue.trim(); // Remove whitespace
@@ -310,6 +314,8 @@ var BalanceComponent = /** @class */ (function () {
         this.dataSource.filter = filterValue;
     };
     BalanceComponent.prototype.ngOnInit = function () {
+        this.fechaInicio = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](new Date());
+        this.fechaFin = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](new Date());
         this.getCurrentUser();
     };
     BalanceComponent.prototype.ngAfterViewInit = function () {
@@ -318,10 +324,10 @@ var BalanceComponent = /** @class */ (function () {
     };
     BalanceComponent.prototype.getConceptosByUserDates = function (filtroForm) {
         var _this = this;
-        this.balance.fechaInicio = filtroForm.value.fechaInicio;
-        this.balance.fechaFin = filtroForm.value.fechaFin;
-        console.log(this.balance);
-        this.conceptoService.getConceptosByUserDates(this.userUid, this.balance).subscribe(function (res) {
+        filtroForm.value.fechaInicio = this.fechaInicio.value;
+        filtroForm.value.fechaFin = this.fechaFin.value;
+        console.log(filtroForm.value.fechaInicio, filtroForm.value.fechaFin);
+        this.conceptoService.getConceptosByUserDates(this.userUid, filtroForm.value.fechaInicio, filtroForm.value.fechaFin).subscribe(function (res) {
             _this.dataSource.data = res;
         });
     };
@@ -1781,8 +1787,8 @@ var ConceptosService = /** @class */ (function () {
         });
         ;
     };
-    ConceptosService.prototype.getConceptosByUserDates = function (userUid, balance) {
-        this.conceptosCollection = this.afs.collection('conceptos', function (ref) { return ref.where('userUid', '==', userUid).orderBy('date', 'desc').startAt(balance.fechaInicio).endAt(balance.fechaFin); });
+    ConceptosService.prototype.getConceptosByUserDates = function (userUid, fechaInicio, fechaFin) {
+        this.conceptosCollection = this.afs.collection('conceptos', function (ref) { return ref.where('userUid', '==', userUid).orderBy('date', 'desc').startAt(fechaInicio).endAt(fechaFin); });
         return this.conceptos = this.conceptosCollection.snapshotChanges()
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (changes) {
             return changes.map(function (action) {
