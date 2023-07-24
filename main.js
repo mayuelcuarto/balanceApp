@@ -63,7 +63,7 @@ var routes = [
     { path: 'user/register', component: _components_users_register_register_component__WEBPACK_IMPORTED_MODULE_6__["RegisterComponent"] },
     { path: 'user/login-message', component: _components_users_login_message_login_message_component__WEBPACK_IMPORTED_MODULE_5__["LoginMessageComponent"] },
     { path: 'user/profile', component: _components_users_profile_profile_component__WEBPACK_IMPORTED_MODULE_7__["ProfileComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_11__["AuthGuard"]] },
-    { path: 'conceptos', component: _components_conceptos_conceptos_component__WEBPACK_IMPORTED_MODULE_8__["ConceptosComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_11__["AuthGuard"]] },
+    { path: 'conceptos', component: _components_conceptos_conceptos_component__WEBPACK_IMPORTED_MODULE_8__["ConceptosComponent"] },
     { path: 'categorias', component: _components_categorias_categorias_component__WEBPACK_IMPORTED_MODULE_9__["CategoriasComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_11__["AuthGuard"]] },
     { path: 'balance', component: _components_balance_balance_component__WEBPACK_IMPORTED_MODULE_10__["BalanceComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_11__["AuthGuard"]] }
 ];
@@ -1787,10 +1787,10 @@ var ConceptosService = /** @class */ (function () {
         });
     };
     ConceptosService.prototype.getConceptosByUserDates = function (userUid, fechaInicio, fechaFin) {
-        var fechaInicioTime = fechaInicio.getTime();
-        var fechaFinTime = fechaFin.getTime();
-        console.log(fechaInicioTime, fechaFinTime);
-        this.conceptosCollection = this.afs.collection('conceptos', function (ref) { return ref.where('userUid', '==', userUid).where('date', '>=', fechaInicioTime).where('date', '<=', fechaFinTime).orderBy('date', 'desc'); });
+        //var fechaInicioTime = fechaInicio.getTime();
+        //var fechaFinTime = fechaFin.getTime();
+        //console.log(fechaInicioTime, fechaFinTime);
+        this.conceptosCollection = this.afs.collection('conceptos', function (ref) { return ref.where('date', '>=', fechaInicio).orderBy('date', 'desc'); });
         return this.conceptos = this.conceptosCollection.snapshotChanges()
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (changes) {
             return changes.map(function (action) {
