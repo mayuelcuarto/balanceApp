@@ -1790,7 +1790,11 @@ var ConceptosService = /** @class */ (function () {
         //var fechaInicioTime = fechaInicio.getTime();
         //var fechaFinTime = fechaFin.getTime();
         //console.log(fechaInicioTime, fechaFinTime);
-        this.conceptosCollection = this.afs.collection('conceptos', function (ref) { return ref.where('date', '>=', fechaInicio).orderBy('date', 'desc'); });
+        this.conceptosCollection = this.afs.collection('conceptos', function (ref) { return ref
+            .where('userUid', '==', userUid)
+            .orderBy('date', 'asc')
+            .startAt(fechaInicio)
+            .endAt(fechaFin); });
         return this.conceptos = this.conceptosCollection.snapshotChanges()
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (changes) {
             return changes.map(function (action) {
