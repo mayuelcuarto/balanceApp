@@ -321,6 +321,7 @@ var BalanceComponent = /** @class */ (function () {
         var _this = this;
         this.balance.fechaInicio = filtroForm.value.fechaInicio;
         this.balance.fechaFin = filtroForm.value.fechaFin;
+        console.log(this.balance);
         this.conceptoService.getConceptosByUserDates(this.userUid, this.balance).subscribe(function (res) {
             _this.dataSource.data = res;
         });
