@@ -65,7 +65,7 @@ var routes = [
     { path: 'user/profile', component: _components_users_profile_profile_component__WEBPACK_IMPORTED_MODULE_7__["ProfileComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_11__["AuthGuard"]] },
     { path: 'conceptos', component: _components_conceptos_conceptos_component__WEBPACK_IMPORTED_MODULE_8__["ConceptosComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_11__["AuthGuard"]] },
     { path: 'categorias', component: _components_categorias_categorias_component__WEBPACK_IMPORTED_MODULE_9__["CategoriasComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_11__["AuthGuard"]] },
-    { path: 'balance', component: _components_balance_balance_component__WEBPACK_IMPORTED_MODULE_10__["BalanceComponent"] }
+    { path: 'balance', component: _components_balance_balance_component__WEBPACK_IMPORTED_MODULE_10__["BalanceComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_11__["AuthGuard"]] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -1785,7 +1785,6 @@ var ConceptosService = /** @class */ (function () {
             concepto.id = docRef.id;
             _this.updateConcepto(concepto);
         });
-        ;
     };
     ConceptosService.prototype.getConceptosByUserDates = function (userUid, fechaInicio, fechaFin) {
         var fechaInicioTime = fechaInicio.getTime();
