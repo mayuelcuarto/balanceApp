@@ -332,8 +332,8 @@ var BalanceComponent = /** @class */ (function () {
         this.conceptoService.getConceptosByUserDates(this.userUid, filtroForm.value.fechaInicio, filtroForm.value.fechaFin).subscribe(function (res) {
             _this.dataSource.data = res;
             _this.dataRes = res;
+            console.log(res);
         });
-        console.log(this.dataRes);
     };
     BalanceComponent.prototype.getCurrentUser = function () {
         var _this = this;
