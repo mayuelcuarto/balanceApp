@@ -328,14 +328,14 @@ var BalanceComponent = /** @class */ (function () {
         filtroForm.value.fechaFin = this.fechaFin.value;
         this.conceptoService.getConceptosByUserDates(this.userUid, filtroForm.value.fechaInicio, filtroForm.value.fechaFin).subscribe(function (res) {
             _this.dataSource.data = res;
-            var montoIngresos = 0;
-            var montoEgresos = 0;
+            var montoIngresos = 0.0;
+            var montoEgresos = 0.0;
             res.forEach(function (element) {
                 if (element.type == 'ingreso') {
-                    montoIngresos = montoIngresos + element.mount;
+                    montoIngresos = montoIngresos + parseFloat(element.mount.toString());
                 }
                 else if (element.type == 'egreso') {
-                    montoEgresos = montoEgresos + element.mount;
+                    montoEgresos = montoEgresos + parseFloat(element.mount.toString());
                 }
             });
             console.log('Monto Ingresos: ' + montoIngresos);
