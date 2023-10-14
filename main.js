@@ -307,9 +307,6 @@ var BalanceComponent = /** @class */ (function () {
         this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"]();
         this.fechaInicio = null;
         this.fechaFin = null;
-        this.dataRes = null;
-        this.montoIngresos = 0.0;
-        this.montoEgresos = 0.0;
     }
     BalanceComponent.prototype.applyFilter = function (filterValue) {
         filterValue = filterValue.trim(); // Remove whitespace
@@ -331,8 +328,18 @@ var BalanceComponent = /** @class */ (function () {
         filtroForm.value.fechaFin = this.fechaFin.value;
         this.conceptoService.getConceptosByUserDates(this.userUid, filtroForm.value.fechaInicio, filtroForm.value.fechaFin).subscribe(function (res) {
             _this.dataSource.data = res;
-            _this.dataRes = res;
-            console.log(res);
+            var montoIngresos = 0;
+            var montoEgresos = 0;
+            res.forEach(function (element) {
+                if (element.type == 'ingreso') {
+                    montoIngresos = montoIngresos + element.mount;
+                }
+                else if (element.type == 'egreso') {
+                    montoEgresos = montoEgresos + element.mount;
+                }
+            });
+            console.log(montoIngresos);
+            console.log(montoEgresos);
         });
     };
     BalanceComponent.prototype.getCurrentUser = function () {
