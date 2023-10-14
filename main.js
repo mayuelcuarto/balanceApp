@@ -338,8 +338,8 @@ var BalanceComponent = /** @class */ (function () {
                     montoEgresos = montoEgresos + element.mount;
                 }
             });
-            console.log(montoIngresos);
-            console.log(montoEgresos);
+            console.log('Monto Ingresos: ' + montoIngresos);
+            console.log('Monto Egresos: ' + montoEgresos);
         });
     };
     BalanceComponent.prototype.getCurrentUser = function () {
