@@ -307,9 +307,9 @@ var BalanceComponent = /** @class */ (function () {
         this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"]();
         this.fechaInicio = null;
         this.fechaFin = null;
-        this.totalIngresos = 0;
-        this.totalEgresos = 0;
-        this.balance = 0;
+        this.totalIngresos = null;
+        this.totalEgresos = null;
+        this.balance = null;
     }
     BalanceComponent.prototype.applyFilter = function (filterValue) {
         filterValue = filterValue.trim(); // Remove whitespace
@@ -341,11 +341,9 @@ var BalanceComponent = /** @class */ (function () {
                     montoEgresos = montoEgresos + parseFloat(element.mount.toString());
                 }
             });
-            console.log('Monto Ingresos: ' + montoIngresos);
-            console.log('Monto Egresos: ' + montoEgresos);
-            _this.totalIngresos = montoIngresos;
-            _this.totalEgresos = montoEgresos;
-            _this.balance = montoIngresos - montoEgresos;
+            _this.totalIngresos = montoIngresos.toFixed(2);
+            _this.totalEgresos = montoEgresos.toFixed(2);
+            _this.balance = (montoIngresos - montoEgresos).toFixed(2);
         });
     };
     BalanceComponent.prototype.getCurrentUser = function () {
