@@ -591,7 +591,6 @@ var ConceptosComponent = /** @class */ (function () {
         var _this = this;
         this.conceptoService.getConceptosByUser(userUid).subscribe(function (res) {
             _this.dataSource.data = res;
-            _this.export = res;
         });
     };
     ConceptosComponent.prototype.onChangeStatus = function (concepto) {
@@ -620,7 +619,11 @@ var ConceptosComponent = /** @class */ (function () {
         });
     };
     ConceptosComponent.prototype.exportar = function () {
-        //console.log(this.export);
+        var _this = this;
+        this.conceptoService.getConceptosExportByUser(this.userUid).subscribe(function (res) {
+            _this.export = res;
+        });
+        console.log(this.export);
         var ws = xlsx__WEBPACK_IMPORTED_MODULE_3__["utils"].json_to_sheet(this.export);
         var wb = xlsx__WEBPACK_IMPORTED_MODULE_3__["utils"].book_new();
         xlsx__WEBPACK_IMPORTED_MODULE_3__["utils"].book_append_sheet(wb, ws, 'Placeholder');
@@ -1790,6 +1793,17 @@ var ConceptosService = /** @class */ (function () {
     ConceptosService.prototype.getConceptosByUser = function (userUid) {
         this.conceptosCollection = this.afs.collection('conceptos', function (ref) { return ref.where('userUid', '==', userUid).orderBy('date', 'desc'); });
         return this.conceptos = this.conceptosCollection.snapshotChanges()
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (changes) {
+            return changes.map(function (action) {
+                var data = action.payload.doc.data();
+                data.id = action.payload.doc.id;
+                return data;
+            });
+        }));
+    };
+    ConceptosService.prototype.getConceptosExportByUser = function (userUid) {
+        this.conceptosExportCollection = this.afs.collection('conceptos', function (ref) { return ref.where('userUid', '==', userUid).orderBy('date', 'desc'); });
+        return this.conceptosExport = this.conceptosExportCollection.snapshotChanges()
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (changes) {
             return changes.map(function (action) {
                 var data = action.payload.doc.data();
