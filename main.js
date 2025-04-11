@@ -526,7 +526,7 @@ module.exports = "h1{\r\n\ttext-align: center;\r\n}\r\n\r\ntable{\r\n\twidth: 10
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <div class=\"header-app\">\r\n  \t<h1>Mantenimiento de Conceptos</h1>\r\n  </div>\r\n  <div class=\"example-header\" fxLayout=\"row\">\r\n    <div class=\"oneline-left\">\r\n      <button mat-raised-button color=\"primary\" (click)=\"openDialog()\">\r\n        <mat-icon>note_add</mat-icon> Nuevo\r\n      </button>\r\n    </div>\r\n    <div class=\"oneline\">\r\n      <button mat-raised-button color=\"tertiary\" (click)=\"exportar()\">\r\n        <mat-icon>file_download</mat-icon> Exportar\r\n      </button>\r\n    </div>\r\n    <div class=\"oneline-right\">\r\n      <mat-form-field >\r\n        <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filtro\">\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n  <div>\r\n    <table mat-table [dataSource]=\"dataSource\" matSort class=\"mat-elevation-z8\">\r\n    \t<ng-container matColumnDef=\"type\">\r\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.type}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"category\">\r\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoría </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.category}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"description\">\r\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.description}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"mount\">\r\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Monto </th>\r\n        <td mat-cell *matCellDef=\"let element\" class=\"mount-cell\"> {{element.mount | number:'.2'}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"date\">\r\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.date.toDate() | date: 'dd/MM/yyyy'}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"actions\">\r\n      <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones </th>\r\n      <td mat-cell *matCellDef=\"let element\">\r\n        <mat-icon (click)=\"onPreUpdateConcepto(element)\">edit</mat-icon>\r\n        &nbsp;\r\n        <mat-icon (click)=\"onDeleteConcepto(element.id)\">delete</mat-icon>\r\n      </td>\r\n      </ng-container>\r\n\r\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n    </table>\r\n\r\n    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n  <div class=\"header-app\">\r\n  \t<h1>Mantenimiento de Conceptos</h1>\r\n  </div>\r\n  <div class=\"example-header\" fxLayout=\"row\">\r\n    <div class=\"oneline-left\">\r\n      <button mat-raised-button color=\"primary\" (click)=\"openDialog()\">\r\n        <mat-icon>note_add</mat-icon> Nuevo\r\n      </button>\r\n    </div>\r\n    <div class=\"oneline-left\">\r\n      <button mat-raised-button color=\"secondary\" (click)=\"exportar()\">\r\n        <mat-icon>file_download</mat-icon> Exportar\r\n      </button>\r\n    </div>\r\n    <div class=\"oneline-right\">\r\n      <mat-form-field >\r\n        <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filtro\">\r\n      </mat-form-field>\r\n    </div>\r\n  </div>\r\n  <div>\r\n    <table mat-table [dataSource]=\"dataSource\" matSort class=\"mat-elevation-z8\">\r\n    \t<ng-container matColumnDef=\"type\">\r\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.type}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"category\">\r\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoría </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.category}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"description\">\r\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.description}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"mount\">\r\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Monto </th>\r\n        <td mat-cell *matCellDef=\"let element\" class=\"mount-cell\"> {{element.mount | number:'.2'}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"date\">\r\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>\r\n        <td mat-cell *matCellDef=\"let element\"> {{element.date.toDate() | date: 'dd/MM/yyyy'}} </td>\r\n      </ng-container>\r\n\r\n      <ng-container matColumnDef=\"actions\">\r\n      <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones </th>\r\n      <td mat-cell *matCellDef=\"let element\">\r\n        <mat-icon (click)=\"onPreUpdateConcepto(element)\">edit</mat-icon>\r\n        &nbsp;\r\n        <mat-icon (click)=\"onDeleteConcepto(element.id)\">delete</mat-icon>\r\n      </td>\r\n      </ng-container>\r\n\r\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n    </table>\r\n\r\n    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -543,9 +543,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _services_conceptos_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/conceptos.service */ "./src/app/services/conceptos.service.ts");
-/* harmony import */ var _modals_concepto_modal_concepto_modal_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../modals/concepto-modal/concepto-modal.component */ "./src/app/modals/concepto-modal/concepto-modal.component.ts");
-/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var xlsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! xlsx */ "./node_modules/xlsx/xlsx.mjs");
+/* harmony import */ var _services_conceptos_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/conceptos.service */ "./src/app/services/conceptos.service.ts");
+/* harmony import */ var _modals_concepto_modal_concepto_modal_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../modals/concepto-modal/concepto-modal.component */ "./src/app/modals/concepto-modal/concepto-modal.component.ts");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/auth.service */ "./src/app/services/auth.service.ts");
+
 
 
 
@@ -564,7 +566,7 @@ var ConceptosComponent = /** @class */ (function () {
         this.export = null;
     }
     ConceptosComponent.prototype.openDialog = function () {
-        var dialogRef = this.dialog.open(_modals_concepto_modal_concepto_modal_component__WEBPACK_IMPORTED_MODULE_4__["ConceptoModalComponent"], {
+        var dialogRef = this.dialog.open(_modals_concepto_modal_concepto_modal_component__WEBPACK_IMPORTED_MODULE_5__["ConceptoModalComponent"], {
             width: '250px',
             data: { selectedConcepto: this.conceptoService.selectedConcepto,
                 userUid: this.userUid
@@ -618,7 +620,11 @@ var ConceptosComponent = /** @class */ (function () {
         });
     };
     ConceptosComponent.prototype.exportar = function () {
-        console.log(this.export);
+        //console.log(this.export);
+        var ws = xlsx__WEBPACK_IMPORTED_MODULE_3__["utils"].json_to_sheet(this.export);
+        var wb = xlsx__WEBPACK_IMPORTED_MODULE_3__["utils"].book_new();
+        xlsx__WEBPACK_IMPORTED_MODULE_3__["utils"].book_append_sheet(wb, ws, 'Placeholder');
+        xlsx__WEBPACK_IMPORTED_MODULE_3__["writeFile"](wb, 'Conceptos.xlsx');
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"]),
@@ -634,9 +640,9 @@ var ConceptosComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./conceptos.component.html */ "./src/app/components/conceptos/conceptos.component.html"),
             styles: [__webpack_require__(/*! ./conceptos.component.css */ "./src/app/components/conceptos/conceptos.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_conceptos_service__WEBPACK_IMPORTED_MODULE_3__["ConceptosService"],
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_conceptos_service__WEBPACK_IMPORTED_MODULE_4__["ConceptosService"],
             _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"],
-            _services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"]])
+            _services_auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"]])
     ], ConceptosComponent);
     return ConceptosComponent;
 }());
