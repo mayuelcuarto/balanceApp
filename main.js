@@ -635,9 +635,9 @@ var ConceptosComponent = /** @class */ (function () {
                 return;
             }
             // Convertir los datos a formato CSV
-            var headers = Object.keys(conceptos[0]).join(',');
+            var headers = Object.keys(conceptos[0]).join(';');
             var rows = conceptos.map(function (concepto) {
-                return Object.values(concepto).map(function (value) { return "\"" + value + "\""; }).join(',');
+                return Object.values(concepto).map(function (value) { return "\"" + value + "\""; }).join(';');
             });
             var csvData = headers + "\n" + rows.join('\n');
             // Crear un Blob con el contenido CSV
